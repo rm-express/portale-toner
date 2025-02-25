@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 
 export default function PortaleToner() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -29,6 +30,8 @@ export default function PortaleToner() {
           <button onClick={() => setIsLoggedIn(false)} style={{ backgroundColor: '#ff4d4d', border: 'none', padding: '8px 12px', color: '#fff', borderRadius: '4px' }}>Logout</button>
         )}
       </nav>
+
+      <div id="root"></div>
 
       <div style={{ maxWidth: '400px', margin: 'auto', marginTop: '40px', padding: '20px', backgroundColor: '#fff', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
         {!isLoggedIn ? (
@@ -69,3 +72,5 @@ export default function PortaleToner() {
     </div>
   );
 }
+
+ReactDOM.render(<PortaleToner />, document.getElementById('root'));
